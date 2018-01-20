@@ -1,6 +1,7 @@
 useradd -d /home/steam -m -s /bin/bash steam
 install_files_dir="${current_dir}/install_files/"
 apt-get -y install lib32gcc1 libswt-gtk-3-java zip sqlite3 python2.7
+su - steam -c 'mkdir -p /home/steam/Steam'
 su - steam -c 'curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -'
 su - steam -c 'cd /home/steam/Steam && ./steamcmd.sh +login anonymous +force_install_dir /home/steam/wu +app_update 402370 +validate +quit'
 

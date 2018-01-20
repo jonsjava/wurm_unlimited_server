@@ -1,0 +1,13 @@
+# Wurm Unlimited Dedicated Server systemd service file
+
+[Unit]
+Description=Wurm Unlimited Server
+After=network.target
+
+[Service]
+User=steam
+Group=steam
+WorkingDirectory=/home/steam/wu
+ExecStart=/home/steam/wu/start_server.sh
+TimeoutSec=600
+Restart=on-failure  

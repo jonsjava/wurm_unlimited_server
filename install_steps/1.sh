@@ -18,5 +18,5 @@ fi
 echo "I am now going to install updates. Once complete, the server will reboot. You can continue the install right where you left"
 echo "  off by re-running this installer once you have logged back in."
 read -p "Press Enter to continue" </dev/tty
-echo '2' > $(pwd)/steps
+echo '2' > $(pwd)/.steps
 apt update && apt full-upgrade -y && reboot

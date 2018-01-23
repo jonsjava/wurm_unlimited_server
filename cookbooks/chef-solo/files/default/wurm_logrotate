@@ -1,0 +1,9 @@
+/var/log/wurm/server.log {
+    compress
+    rotate 5
+    missingok
+    notifempty
+    size 100M
+    weekly
+    create 0600 root root
+}

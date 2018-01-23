@@ -7,8 +7,8 @@ After=network.target
 [Service]
 User=steam
 Group=steam
-WorkingDirectory=/home/steam/wu
-ExecStart=/home/steam/wu/start_server.sh
+WorkingDirectory=/home/<%= @server_user %>/wu
+ExecStart=/home/<%= @server_user %>/wu/start_server.sh
 TimeoutSec=600
 Restart=on-failure
 StandardOutput=syslog

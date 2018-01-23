@@ -1,0 +1,15 @@
+{
+  "name": "wurm-server",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "json_class": "Chef::Role",
+  "Description": "Builds out the wurm unlimited services",
+  "chef_type": "role",
+  "run_list": [
+    "recipe[chef-solo::default]"
+  ]
+}

@@ -13,7 +13,6 @@ fi
 cd /root/
 git clone https://github.com/jonsjava/wurm_unlimited_server
 cd /root/wurm_unlimited_server
-git checkout deploy-overhaul
 git reset --hard
 git fetch
 git pull origin deploy-overhaul

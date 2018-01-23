@@ -125,15 +125,15 @@ export SERVER_USER='$SERVER_USER'" > server.cfg
 
 source server.cfg
 
-apt-get update
-which berks 2>&1 > /dev/null
-chef_found=$?
-if [ $chef_found = 1 ]; then
-  wget https://packages.chef.io/files/stable/chefdk/1.6.11/ubuntu/16.04/chefdk_1.6.11-1_amd64.deb
-  dpkg -i chefdk_1.6.11-1_amd64.deb
-fi
-cur_dir=$(pwd)
-cd cookbooks/chef-solo
-berks vendor ../
-cd $cur_dir
-chef-solo -c solo.rb -j solo.json
+#apt-get update
+#which berks 2>&1 > /dev/null
+#chef_found=$?
+#if [ $chef_found = 1 ]; then
+#  wget https://packages.chef.io/files/stable/chefdk/1.6.11/ubuntu/16.04/chefdk_1.6.11-1_amd64.deb
+#  dpkg -i chefdk_1.6.11-1_amd64.deb
+#fi
+#cur_dir=$(pwd)
+#cd cookbooks/chef-solo
+#berks vendor ../
+#cd $cur_dir
+#chef-solo -c solo.rb -j solo.json

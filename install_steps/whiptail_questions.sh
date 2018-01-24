@@ -107,7 +107,7 @@ function set_if_homeserver(){
 
 function set_homekingdom(){
   if [ "$HOMEKINGDOM" = "" ]; then
-    homekingdom_choice=$(whiptail --title "$TITLE" --menu "Please select the Kingdom this server belongs to" 20 78 5 "0" "No Kingdom (Adventure/Creative)" "1" "Jen-Kellon (Adventure)" "2" "Mol-Rehan (Adventure)" "3" "Horde of the Summoned (Adventure)" "4" "Freedom (Creative)" 3>&1 1>&2 2>&3)
+    homekingdom_choice=$(whiptail --title "$TITLE" --menu "Please select the Kingdom this server belongs to" 20 78 5 "0" "No Kingdom" "1" "Jen-Kellon" "2" "Mol-Rehan" "3" "Horde of the Summoned" "4" "Freedom" 3>&1 1>&2 2>&3)
     if [ "$homekingdom_choice" = "" ]; then
       exit 1
     else
@@ -209,22 +209,9 @@ function set_server_password(){
 }
 
 function set_server_type(){
-  if [ "$HOMEKINGDOM" = "0" ]; then
-    SERVER_TYPE=$(whiptail --title "$TITLE" --menu "Please select the Server Type this should run as" 20 78 5 "Creative" "Less hostile and faster timers." "Adventure" "PvP Simulator with slow timers and more hostile mobs and NPC AI" 3>&1 1>&2 2>&3)
-    if [ "$SERVER_TYPE" = "" ]; then
-      SERVER_TYPE="Creative"
-    fi
-  else
-    case $HOMEKINGDOM in
-      1|2|3)
-        whiptail --title "$TITLE" --msgbox "Based on your Home Kingdom selection, Adventure has been selected as the server type for you." 8 78
-        SERVER_TYPE="Adventure"
-      ;;
-      4)
-        whiptail --title "$TITLE" --msgbox "Based on your Home Kingdom selection, Creative has been selected as the server type for you." 8 78
-        SERVER_TYPE="Creative"
-      ;;
-    esac
+  SERVER_TYPE=$(whiptail --title "$TITLE" --menu "Please select the Server Type this should run as" 20 78 5 "Creative" "Less hostile and faster timers." "Adventure" "PvP Simulator with slow timers and more hostile mobs and NPC AI" 3>&1 1>&2 2>&3)
+  if [ "$SERVER_TYPE" = "" ]; then
+    SERVER_TYPE="Creative"
   fi
 }
 

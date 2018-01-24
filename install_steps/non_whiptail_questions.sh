@@ -187,33 +187,20 @@ function set_server_password(){
 }
 
 function set_server_type(){
-  if [ "$HOMEKINGDOM" = "0" ]; then
-    echo "Please select the Server Type this should run as"
-    echo "  Creative -- Less hostile and faster timers."
-    echo "  Adventure -- PvP Simulator with slow timers and more hostile mobs and NPC AI"
-    echo ""
-    echo "Please enter 'Adventure' or 'Creative'. Default [Creative]"
-    read SERVER_TYPE
-    case $SERVER_TYPE in
-      Adventure)
-        SERVER_TYPE="Adventure"
-      ;;
-      *)
-        SERVER_TYPE="Creative"
-      ;;
-    esac
-  else
-    case $HOMEKINGDOM in
-      1|2|3)
-        echo "Based on your Home Kingdom selection, Adventure has been selected as the server type for you."
-        SERVER_TYPE="Adventure"
-      ;;
-      4)
-        echo "Based on your Home Kingdom selection, Creative has been selected as the server type for you."
-        SERVER_TYPE="Creative"
-      ;;
-    esac
-  fi
+  echo "Please select the Server Type this should run as"
+  echo "  Creative -- Less hostile and faster timers."
+  echo "  Adventure -- PvP Simulator with slow timers and more hostile mobs and NPC AI"
+  echo ""
+  echo "Please enter 'Adventure' or 'Creative'. Default [Creative]"
+  read SERVER_TYPE
+  case $SERVER_TYPE in
+    Adventure)
+      SERVER_TYPE="Adventure"
+    ;;
+    *)
+      SERVER_TYPE="Creative"
+    ;;
+  esac
 }
 
 function set_server_password(){
